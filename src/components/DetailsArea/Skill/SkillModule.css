@@ -1,0 +1,91 @@
+.skill-module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 20%;
+    margin: 10px;
+    
+  }
+  
+  .skill-name {
+    font-size: 0.5 rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-right: .5rem;
+  }
+  
+  .circular-progress {
+    width: 80%;
+    max-width: 200px;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .circular-progress {
+      max-width: 200px;
+    }
+  }
+  
+  @media only screen and (min-width: 900px) {
+    .circular-progress {
+      max-width: 300px;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .circular-progress {
+      max-width: 400px;
+    }
+  }
+  
+  @media only screen and (min-width: 1500px) {
+    .circular-progress {
+      max-width: 500px;
+    }
+  }
+  
+  @media only screen and (min-width: 1800px) {
+    .circular-progress {
+      max-width: 600px;
+    }
+  }
+  
+  @media only screen and (min-width: 2100px) {
+    .circular-progress {
+      max-width: 700px;
+    }
+  }
+  
+  @media only screen and (min-width: 2400px) {
+    .circular-progress {
+      max-width: 800px;
+    }
+  }
+  
+  @media only screen and (min-width: 2700px) {
+    .circular-progress {
+      max-width: 900px;
+    }
+  }
+  
+  @media only screen and (min-width: 3000px) {
+    .circular-progress {
+      max-width: 1000px;
+    }
+  }
+  
+  .circular-progress .CircularProgressbar-path {
+    stroke-linecap: round;
+    animation: CircularProgressbar-path-anim 1.5s ease-out;
+  }
+  
+  @keyframes CircularProgressbar-path-anim {
+    from {
+      stroke-dashoffset: 350;
+    }
+  
+    to {
+      stroke-dashoffset: 50;
+    }
+  }
+  

@@ -21,7 +21,7 @@ const ImageWrapper = styled.div`
 const Image = styled.img`
   animation: ${fadeIn} 0.8s ease-in-out;
   border-radius: 50%;
-  height: 200px;
+  height: 300px;
   // margin-left: 30px;
   margin-bottom: 30px;
   max-width: 100%;

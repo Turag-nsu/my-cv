@@ -5,7 +5,7 @@ import { keyframes } from '@emotion/react';
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -24,6 +24,8 @@ const JWDline = () => {
     padding: theme.spacing(1),
     display: 'block',
     borderRadius: `10px`,
+    fontSize: "3rem",
+    marginBottom: "6rem",
   }));
 
   return (

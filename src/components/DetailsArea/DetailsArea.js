@@ -1,48 +1,67 @@
 import { Grid, Box, Button } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import './DetailsArea.css';
-import BioComponent from './rightPart'
+import BioComponent from './Bio/Bio';
 import { keyframes } from '@mui/system';
+import SkillsComponent from './Skill/Skill';
+import WorksComponent from './Works';
 
 
-const SkillsComponent = () => <div>Skills</div>;
-const WorksComponent = () => <div>Works</div>;
-
-const fadeInAnimation = keyframes`
+const fadeInLeftAnimation = keyframes`
   from {
     opacity: 0;
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
+    transform: translateX(0);
   }
 `;
 
-// Define the styled component using the fadeIn animation
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? '#1A2027' : '#d2d2d2',
+const fadeInRightAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const AnimatedItem = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#d2d2d2',
   ...theme.typography.body2,
-  padding: theme.spacing(1),
+  padding: theme.spacing(2),
   textAlign: 'center',
   color: theme.palette.text.secondary,
-  minHeight: "300px",
-  animation: `${fadeInAnimation} 0.8s ease-in-out`,
+  // minHeight: '300px',
+  animation: `${fadeInLeftAnimation} 0.8s ease-in-out`,
+}));
+
+const AnimatedItem2 = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#d2d2d2',
+  minHeight: '300px',
+  padding: theme.spacing(1),
+  color: theme.palette.text.secondary,
+  borderRadius: theme.shape.borderRadius,
+  animation: `${fadeInRightAnimation} 0.8s ease-in-out`,
 }));
 
 const DetailsArea = () => {
   const [activeComponent, setActiveComponent] = useState(<BioComponent />);
-  
-  // Define a function to set the active component based on which button is clicked
   const handleButtonClick = (component) => {
+    
     switch (component) {
-      case "Bio":
+      case 'Bio':
         setActiveComponent(<BioComponent />);
         break;
-      case "Skills":
+      case 'Skills':
         setActiveComponent(<SkillsComponent />);
         break;
-      case "Works":
+      case 'Works':
         setActiveComponent(<WorksComponent />);
         break;
       default:
@@ -50,27 +69,28 @@ const DetailsArea = () => {
     }
   };
 
+  
+  
+
   return (
     <div className="detailsBox">
       <Box>
-        <Grid container spacing={1}>
-          <Grid item xs={2}>
-            <Item>
-            <Grid item xs={12}>
-              <Button onClick={() => handleButtonClick("Bio")}>Bio</Button>
+        <Grid container spacing={1} display="flex" justifyContent="center">
+          <Grid item xs={10} sm={2}>
+            <AnimatedItem>
+              <Grid item xs={12}>
+                <Button onClick={() => handleButtonClick('Bio')}>Bio</Button>
               </Grid>
               <Grid item xs={12}>
-              <Button onClick={() => handleButtonClick("Skills")}>Skills</Button>
+                <Button onClick={() => handleButtonClick('Skills')}>Skills</Button>
               </Grid>
               <Grid item xs={12}>
-              <Button onClick={() => handleButtonClick("Works")}>Works</Button>
+                <Button onClick={() => handleButtonClick('Works')}>Works</Button>
               </Grid>
-            </Item>
+            </AnimatedItem>
           </Grid>
-          <Grid item xs={10}>
-            <Item >
-              {activeComponent}
-            </Item>
+          <Grid item xs={10} sm={10}>
+            <AnimatedItem2 style={{ padding: '10px' }}>{activeComponent}</AnimatedItem2>
           </Grid>
         </Grid>
       </Box>

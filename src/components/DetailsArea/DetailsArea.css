@@ -1,7 +1,10 @@
 .detailsBox{
-  width: 90%;
+  
   margin: auto;
   max-width: 800px;
-  margin-bottom: 100px;
+  margin-bottom: auto;
 }
 
+/* .detailsBox .MuiGrid-item:first-child {
+  min-width: 100px;
+} */
