@@ -90,6 +90,7 @@ const Bio = () => {
                 <GitHubLink username={bulkData.contacts.github} />
                 
             </SocialMedia>
+            
         </Root>
     );
 };

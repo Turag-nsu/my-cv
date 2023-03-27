@@ -9,7 +9,7 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 const ThemeSwitcher = ({ children }) => {
   const [theme, setTheme] = useState(createTheme({
     palette: {
-      mode: "light",
+      mode: "dark",
       primary: red,
       secondary: blue,
     },

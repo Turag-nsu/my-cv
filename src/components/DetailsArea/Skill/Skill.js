@@ -79,15 +79,16 @@ const SkillModule = ({ skillName, skillValue }) => {
 
 const SkillsComponent = () => {
   const skillValues = {
-    MERN: 70,
+    MERN: 75,
     "Problem Solving": 60,
-    Redux: 60,
-    Database: 65,
     "Object Oriented Programing": 90,
-    Git: 80,
-    'REST APIs': 80,
-    'Authentication and Authorization': 60,
     'Data Structures and Algorithms': 90,
+    "Designing": 65,
+    Git: 80,
+    Communication: 85,
+    Teamwork: 90,
+    'Authentication and Authorization': 60,
+    
   };
 
   return (

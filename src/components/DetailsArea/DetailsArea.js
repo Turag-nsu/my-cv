@@ -6,7 +6,7 @@ import './DetailsArea.css';
 import BioComponent from './Bio/Bio';
 import { keyframes } from '@mui/system';
 import SkillsComponent from './Skill/Skill';
-import WorksComponent from './Works';
+import WorksComponent from './works/Works';
 
 
 const fadeInLeftAnimation = keyframes`
@@ -75,7 +75,7 @@ const DetailsArea = () => {
   return (
     <div className="detailsBox">
       <Box>
-        <Grid container spacing={1} display="flex" justifyContent="center">
+        <Grid sm={11}  container spacing={1} display="flex" justifyContent="center">
           <Grid item xs={10} sm={2}>
             <AnimatedItem>
               <Grid item xs={12}>

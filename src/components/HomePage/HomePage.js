@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import AnimatedTitle from '../TitleCom/TitleCom';
 import ProfilePic from '../ProfilePic/ProfilePic';
 import DetailsArea from '../DetailsArea/DetailsArea';
-import { Typography, styled } from '@mui/material';
 import JWDline from '../JWDline/JWDline';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import { useInView } from 'react-intersection-observer';
-
+import Footer from '../Footer/Footer';
+import FloatingDownloadButton from '../CVDownloader/CVDownloader'
 const LazyAnimatedTitle = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -43,6 +43,17 @@ const LazyDetailsArea = () => {
   );
 };
 
+const LazyFooterArea = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-50px',
+  });
+  return (
+    <div ref={ref}>
+      {inView ? <Footer /> : <div style={{ height: '800px' }} />}
+    </div>
+  );
+};
 const HomePage = () => {
   return (
     <div>
@@ -53,6 +64,8 @@ const HomePage = () => {
       <div>
         <LazyDetailsArea />
       </div>
+      <LazyFooterArea />
+      <FloatingDownloadButton/>
     </div>
   );
 };
